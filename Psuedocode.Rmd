@@ -1,0 +1,38 @@
+#(get raw data from user, combine csv into a single table and add a row to the left storing file name (ID)):
+#have the user put all their files into the empty RIDGE_INPUT folder before starting the program
+
+#in bash:
+#loop through each file in the folder
+#   for each file, add a column to the left
+#   remove the ".csv" from the end of the file name
+#   add this edited name into every row of the first column
+#concatenate vertically all of the files
+
+#in R:
+#input the concatenated data
+
+#(turn raw data (representing boundaries) into points that represent the center of the microridge)
+#(eventually, I would like to use an alogrithm for this, but for now I will use the average between points:)
+
+#create list to store average curviness of each ridge of the cell
+#create list to store curviness of each microridge
+#loop through each ridge of the cell, and for each ridge:
+#   create variables to store ridge length and curviness
+#   for i in (number of points in the ridge)
+#       compute average between adjacent points
+#       add this average as a new column in the data file/table
+#   add distance between average points to get ridge length
+#   create list to store curviness values for each point in the ridge
+#   compute curviness of the ridge using the average points and length (derivatives formula)
+#       this will be a for loop, because using instantaneous derivatives
+#       store instantaneous curviness value in the list
+#   add curviness values in the list and divide by ridge length to get curviness over the ridge
+#   store curviness of the ridge in another column of the data file
+#   store curviness of the ridge in a new summary csv file, with the cell number/ID in the first column, ridge ID in the second column, ridge length in the third column, and curviness value in the fourth column
+
+#compute and store average of all microridges in the cell
+#store cell average in a super summary file which has cell ID in the first column and average curviness over the cell in the second column
+
+#output original data file with curviness values for each ridge
+#output summary file with average curviness value for each cell
+#output super summary file with cell ID and average curviness for each cell
